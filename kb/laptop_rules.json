@@ -88,5 +88,71 @@
     ],
     "then": "spec:linux_friendly_hw",
     "priority": 1
+  },
+  {
+    "name": "Gaming Performance Boost",
+    "if": ["gaming"],
+    "then": "needs_high_performance",
+    "priority": 6
+  },
+  {
+    "name": "Creative Performance Boost",
+    "if": ["creative_work"],
+    "then": "needs_high_performance",
+    "priority": 6
+  },
+  {
+    "name": "AI Performance Boost",
+    "if": ["ai_accel"],
+    "then": "needs_high_performance",
+    "priority": 6
+  },
+  {
+    "name": "Performance Hardware",
+    "if": ["needs_high_performance"],
+    "then": "spec:gpu",
+    "priority": 5
+  },
+  {
+    "name": "Budget Gaming",
+    "if": ["budget_low", "gaming"],
+    "then": "recommend:budget_gaming_laptop",
+    "priority": 8
+  },
+  {
+    "name": "Frequent Traveler Battery",
+    "if": ["travel_often"],
+    "then": "long_battery",
+    "priority": 4
+  },
+  {
+    "name": "Windows Preference",
+    "if": ["os_windows"],
+    "then": "spec:windows_preinstalled",
+    "priority": 3
+  },
+  {
+    "name": "Linux Preference",
+    "if": ["os_linux"],
+    "then": "spec:linux_compatible",
+    "priority": 3
+  },
+  {
+    "name": "Performance Laptop (Budget Unknown)",
+    "if": ["budget_unknown", "needs_high_performance"],
+    "then": "recommend:performance_laptop",
+    "priority": 7
+  },
+  {
+    "name": "Portable Laptop (Budget Unknown)",
+    "if": ["budget_unknown", "portable"],
+    "then": "recommend:ultrabook",
+    "priority": 6
+  },
+  {
+    "name": "Office Laptop (Budget Unknown)",
+    "if": ["budget_unknown", "office_only"],
+    "then": "recommend:office_laptop",
+    "priority": 5
   }
 ]

@@ -18,7 +18,8 @@ def collect_initial_facts():
     elif budget.startswith("h"):
         facts.append("budget_high")
     else:
-        print("Invalid budget choice. No budget preference will be added.")
+        print("Invalid budget choice. Budget preference won't be considered in recommendations.")
+        facts.append("budget_unknown")
 
     if input("Do you want to play games? (y/n): ").lower().startswith("y"):
         facts.append("gaming")
